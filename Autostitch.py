@@ -6,8 +6,10 @@ from scipy import ndimage, signal
 from StitchTools import *
 import random as rnd
 
+# A convolution kernel for obtaining a gradient image
 Sobel=array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
 
+# Get the luminance from an image
 def lum(im):
 
     imLum = zeros( ( height(im), width(im) ) )
@@ -17,6 +19,7 @@ def lum(im):
     
     return imLum
     
+
 def computeTensor(im, sigmaG=1, factorSigma=4):
 
     # returns 3d array of the size of the image
